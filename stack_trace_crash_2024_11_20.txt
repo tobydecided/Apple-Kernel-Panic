@@ -1,0 +1,865 @@
+panic(cpu 2 caller 0xfffffe002b3be1d0): DCP PANIC - ASSERT!AppleDCPDPTXPowerController.cpp:561 No device added after powering on the rails. HPD=0 - dcpav(27)
+ASSERT!AppleDCPDPTXPowerController.cpp:561 No device added after powering on the rails. HPD=0
+RTKit: RTKit-2758.1.1.release - Client: AppleDCP-811.1.1~754-ipad14dcp.RELEASE
+!UUID: a1000010-2140-1ed5-a178-80d201401ed5
+ASLR slide: 0x0000000000243000
+Time: 0x0000041f47127ca9
+
+Faulting task  27 Call Stack: 0x0000000000265dc0 0x0000000000265780 0x0000000000265590 0x000000000025e000 0x00000000002b93f8 0x00000000002c793c 0x000000000039c6fc 0x000000000038d1e8 0x0000000000266214 0x0000000000260c58 000000000000000000
+RTKit Task List:
+   name                    | pri     | stack use | status     | resource | warning
+ 0 rtk_background          | 007     |   824/2048  | SEMWAIT    | 0xb7ad10 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+ 1 rtk_ep_work             | 057     |   920/2048  | SEMWAIT    | 0xb77430 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+ 2 log_tx                  | 007     |   624/2048  | SEMWAIT    | 0xb63f50 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+ 3 log_flush               | 015     |   848/4096  | SEMWAIT    | 0xb63250 | 
+      0x0000000000260130 0x0000000000261098 0x000000000026d1b0 0x0000000000260c58
+
+ 4 power                   | 000     |  1776/65536 | RUNNABLE   | 0x92b950 | 
+      0x0000000000260130 0x0000000000264fa0 0x0000000000264c84 0x0000000000260c58
+
+ 5 Terminator              | 015     |   416/2048  | SEMWAIT    | 0xffffffff4116fbd0 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+ 6 main                    | 015     |  6992/40960 | SEMWAIT    | 0xb4a170 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000250bf0 0x0000000000252de8
+
+ 7 dcpexpert               | 015     |   240/16368 | SEMWAIT    | 0xffffffff0c011f40 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+ 8 AFKMailboxEndpoint      | 015     |   688/16368 | SEMWAIT    | 0xffffffff0c031f40 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+ 9 rtkitpmgr               | 015     |   240/16368 | SEMWAIT    | 0xffffffff0c051f40 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+10 iomfb_driver            | 016     |  4272/16384 | SEMWAIT    | 0xffffffff4115b370 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+11 iomfb_low               | 009     |   240/16384 | SEMWAIT    | 0xffffffff41150fa0 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+12 iomfb_driver_low        | 008     |   240/16384 | SEMWAIT    | 0xffffffff41141a20 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+13 iomfb_cdfd              | 014     |  3808/16384 | SEMWAIT    | 0xffffffff41123020 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+14 iomfb_dcp_disp_serv     | 016     |  1008/4096  | SEMWAIT    | 0xffffffff411129c0 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+15 iomfb_ap_link           | 016     |  1200/4096  | SEMWAIT    | 0xffffffff411114b0 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+16 iomfb_ap_caller_0       | 016     |   240/512   | SEMWAIT    | 0xffffffff41110040 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+17 iomfb_ap_caller_1       | 016     |   240/512   | SEMWAIT    | 0xffffffff4110f900 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+18 iomfb_ap_caller_2       | 016     |   240/512   | SEMWAIT    | 0xffffffff4110f2d0 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+19 iomfb_ap_caller_3       | 016     |   240/512   | SEMWAIT    | 0xffffffff4110ec50 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+20 iomfb_ap_callee_0       | 016     |  6896/16384 | SEMWAIT    | 0xffffffff4110e5e0 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+21 iomfb_ap_callee_1       | 016     |  6688/16384 | SEMWAIT    | 0xffffffff4110a160 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+22 iomfb_ap_callee_2       | 016     |  6688/16384 | SEMWAIT    | 0xffffffff41105cf0 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+23 iomfb_ap_callee_3       | 016     |   240/16384 | SEMWAIT    | 0xffffffff41101870 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+24 iosurface_tracker_timer | 015     |   240/16368 | SEMWAIT    | 0xffffffff0c071f40 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+25 AUCWorkLoop             | 015     |   240/16368 | SEMWAIT    | 0xffffffff0c091f40 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+26 auc_dcp_queue           | 015     |   288/16368 | WAITING    | 0xffffffff410f2170 | 
+      0x0000000000260130 0x00000000002608f4 0x000000000025f6dc 0x00000000002668d0 0x000000000038f3a8 0x0000000000260c58
+
+27 dcpav                   | 015     |  1072/16368 | RUNNABLE   | 0 | [Faulting task]
+
+28 cpCapsThread            | 015     |  1360/16368 | SEMWAIT    | 0xffffffff0c0f1f40 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+29 additionThread          | 015     |  6960/16368 | SEMWAIT    | 0xffffffff0c111f40 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+30 removalThread           | 015     |   240/16368 | SEMWAIT    | 0xffffffff0c131f40 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+31 dcpav-power-epic        | 015     |   240/16368 | SEMWAIT    | 0xffffffff0c151f40 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+32 config                  | 015     |   736/16368 | WAITING    | 0xffffffff410cb0c8 | 
+      0x0000000000260130 0x00000000002608f4 0x000000000025f6dc 0x00000000002668d0 0x000000000038f3a8 0x0000000000260c58
+
+33 dcpdptx-hdcp-interface  | 015     |  2912/16368 | SEMWAIT    | 0xffffffff0c191f40 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+34 dcpav-controller-epic   | 015     |  2912/16368 | SEMWAIT    | 0xffffffff0c1b1f40 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+35 dcpdp-controller-epic   | 015     |   240/16368 | SEMWAIT    | 0xffffffff0c1d1f40 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+36 sac-controller          | 015     |   240/16368 | SEMWAIT    | 0xffffffff0c1f1f40 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+37 setDisplayAsync         | 015     |  1280/16368 | SEMWAIT    | 0xffffffff0c211f40 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+38 dcpav-sac-epic          | 015     |  2912/16368 | SEMWAIT    | 0xffffffff0c231f40 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+39 endpointWL              | 015     |  3504/8192  | SEMWAIT    | 0xffffffff410a0c80 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+40 md-manager              | 015     |  3568/8192  | SEMWAIT    | 0xffffffff4109dc30 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+41 AFKGlobalDispatch       | 015     |  7184/16368 | WAITING    | 0xffffffff41095398 | 
+      0x0000000000260130 0x00000000002608f4 0x000000000025f6dc 0x00000000002668d0 0x000000000038f3a8 0x0000000000260c58
+
+42 iomfb_alss              | 016     |   240/4096  | SEMWAIT    | 0xffffffff4102fc00 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+43 iomfb_pdc               | 008     |   240/4096  | SEMWAIT    | 0xffffffff41021820 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+44 iomfb_backlight         | 016     |   240/4096  | SEMWAIT    | 0xffffffff41000da0 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+45 iomfb_mailbox           | 018     |   384/16384 | SEMWAIT    | 0xffffffff40fff110 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+46 iomfb_mailbox_async     | 018     |   240/16384 | SEMWAIT    | 0xffffffff40fefaf0 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+47 iomfb_reg_stream        | 016     |   240/4096  | SEMWAIT    | 0xffffffff40fe7280 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+48 iomfb_video_async       | 016     |  5840/16384 | SEMWAIT    | 0xffffffff40fd6850 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+49 iomfb_video_if          | 016     |   240/4096  | SEMWAIT    | 0xffffffff40fd2250 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+50 iomfb_video_async       | 016     |   240/16384 | SEMWAIT    | 0xffffffff40fc5ae0 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+51 iomfb_video_if_stub     | 016     |   240/4096  | SEMWAIT    | 0xffffffff40fc1500 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+52 cp                      | 015     |   240/16368 | SEMWAIT    | 0xffffffff0c271f40 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+55 poweroff                | 015     |   240/16368 | SEMWAIT    | 0xffffffff0c4f1f40 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+56 cpsrc                   | 015     |   960/16368 | SEMWAIT    | 0xffffffff0c511f40 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+57 restartIntfc            | 015     |   240/16368 | SEMWAIT    | 0xffffffff0c531f40 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+58 hdmiErrorMonitor        | 015     |   240/16368 | SEMWAIT    | 0xffffffff0c551f40 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+59 hdmiErrorInject         | 015     |   240/16368 | SEMWAIT    | 0xffffffff0c571f40 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+60 sinkCount               | 015     |   240/16368 | SEMWAIT    | 0xffffffff0c591f40 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+61 linkStatus              | 015     |   240/16368 | SEMWAIT    | 0xffffffff0c2b1f40 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+62 cpIrq                   | 015     |   240/16368 | SEMWAIT    | 0xffffffff0c2d1f40 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+63 dpIrq                   | 015     |  5648/16368 | SEMWAIT    | 0xffffffff0c2f1f40 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+68 termination             | 015     |  3056/16368 | WAITING    | 0xffffffff410fd2b0 | 
+      0x0000000000260130 0x00000000002608f4 0x000000000025f6dc 0x00000000002668d0 0x000000000038f3a8 0x0000000000260c58
+
+69 iomfb_mailbox           | 018     |   656/16384 | SEMWAIT    | 0xffffffff40f44640 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+70 iomfb_mailbox_async     | 018     |  4688/16384 | SEMWAIT    | 0xffffffff40f355b0 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+79 aup                     | 015     |   240/16368 | SEMWAIT    | 0xffffffff0c371f40 | 
+      0x0000000000260130 0x0000000000261098 0x00000000002661a8 0x0000000000260c58
+
+
+Chinook ASC Async error info: 
+l2c_err_sts 0x5000fbfc00000000, l2c_err_adr 000000000000000000, l2c_err_inf 000000000000000000
+lsu_err_sts 000000000000000000, fed_err_sts 000000000000000000, mmu_err_sts 000000000000000000
+dpc_err_sts 000000000000000000
+
+Mailbox (0): (0)
+  Inbox  AKF_KIC_INBOX_CTRL = 0x00020001, AKF_KIC_MAILBOX_SET = 0x11111101
+  Outbox AKF_AP_OUTBOX_CTRL = 0x00020001, AKF_AP_MAILBOX_SET  = 0x00000000
+
+    dir   endpoint      timestamp           msg
+    ====  ============  ==================  ==================
+    [RX]        user24  0x0000041f3fed3d2c  0x0000001800000202
+    [TX]        user24  0x0000041f3fed45d0  0x0000001c00000002
+    [RX]        user24  0x0000041f3fed4cf0  0x0000000000000042
+    [TX]        user24  0x0000041f3fed53cc  0x0000000000000242
+    [RX]        user24  0x0000041f3fed618c  0x0000107c00000202
+    [TX]        user24  0x0000041f3fed6a28  0x0000000000000242
+    [RX]        user24  0x0000041f3fed7174  0x0000107c00000202
+    [TX]        user24  0x0000041f3fed772c  0x0000000000000242
+    [RX]        user24  0x0000041f3fed7f98  0x0000107c00000202
+    [TX]        user24  0x0000041f3fed8588  0x0000000000000242
+    [RX]        user24  0x0000041f3fed8d10  0x0000107c00000202
+    [TX]        user24  0x0000041f3fed99b4  0x0000000000000242
+    [RX]        user24  0x0000041f3feda144  0x0000107c00000202
+    [TX]        user24  0x0000041f3fedacec  0x0000000000000242
+    [RX]        user24  0x0000041f3fedb4b0  0x0000107c00000202
+    [TX]        user24  0x0000041f3fedc180  0x0000000000000242
+    [RX]        user24  0x0000041f3fedc958  0x0000107c00000202
+    [TX]        user24  0x0000041f3fedd7a4  0x0000000000000242
+    [RX]        user24  0x0000041f3fedde50  0x0000107c00000202
+    [TX]        user24  0x0000041f3fede3e8  0x0000000000000242
+    [RX]        user24  0x0000041f3fedec84  0x0000107c00000202
+    [TX]        user24  0x0000041f3fedf240  0x0000000000000242
+    [RX]        user24  0x0000041f3fedf928  0x0000107c00000202
+    [TX]        user24  0x0000041f3fee054c  0x0000000000000242
+    [RX]        user24  0x0000041f3fee0c58  0x0000107c00000202
+    [TX]        user24  0x0000041f3fee1c34  0x0000000000000242
+    [RX]        user24  0x0000041f3fee2420  0x0000107c00000202
+    [TX]        user24  0x0000041f3fee29dc  0x0000000000000242
+    [RX]        user24  0x0000041f3fee3194  0x0000107c00000202
+    [TX]        user24  0x0000041f3fee3dd8  0x0000000000000242
+    [RX]        user24  0x0000041f3fee44e0  0x0000107c00000202
+    [TX]        user24  0x0000041f3fee5118  0x0000000000000242
+    [RX]        user24  0x0000041f3fee5830  0x0000107c00000202
+    [TX]        user24  0x0000041f3fee6454  0x0000000000000242
+    [RX]        user24  0x0000041f3fee6bb8  0x0000107c00000202
+    [TX]        user24  0x0000041f3fee7974  0x0000000000000242
+    [RX]        user24  0x0000041f3fee8080  0x0000107c00000202
+    [TX]        user24  0x0000041f3fee85a4  0x0000000000000242
+    [RX]        user24  0x0000041f3fee8c54  0x0000107c00000202
+    [TX]        user24  0x0000041f3fee9180  0x0000000000000242
+    [RX]        user24  0x0000041f3fee9874  0x0000107c00000202
+    [TX]        user24  0x0000041f3fee9d34  0x0000000000000242
+    [RX]        user24  0x0000041f3feea3a0  0x0000107c00000202
+    [TX]        user24  0x0000041f3feeb35c  0x0000000000000242
+    [RX]        user24  0x0000041f3feebb60  0x0000107c00000202
+    [TX]        user24  0x0000041f3feec6fc  0x0000000000000242
+    [RX]        user24  0x0000041f3feecee4  0x0000107c00000202
+    [TX]        user24  0x0000041f3feedd60  0x0000000000000242
+    [RX]        user24  0x0000041f3feee5a8  0x0000107c00000202
+    [TX]        user24  0x0000041f3feef22c  0x0000000000000242
+    [RX]        user24  0x0000041f3feef9dc  0x0000107c00000202
+    [TX]        user24  0x0000041f3feeffa8  0x0000000000000242
+    [RX]        user24  0x0000041f3fef06a4  0x0000107c00000202
+    [TX]        user24  0x0000041f3fef0c68  0x0000000000000242
+    [RX]        user24  0x0000041f3fef1384  0x0000107c00000202
+    [TX]        user24  0x0000041f3fef187c  0x0000000000000242
+    [RX]        user24  0x0000041f3fef1f1c  0x0000107c00000202
+    [TX]        user24  0x0000041f3fef3520  0x0000000000000242
+    [RX]        user24  0x0000041f3fef3fa0  0x0000107c00000202
+    [TX]        user24  0x0000041f3fef4eac  0x0000000000000242
+    [RX]        user24  0x0000041f3fef58bc  0x0000107c00000202
+    [TX]        user24  0x0000041f3fef66a0  0x0000000000000242
+    [RX]        user24  0x0000041f3fef6ff4  0x0000107c00000202
+    [TX]        user24  0x0000041f3fef7adc  0x0000000000000242
+    [RX]        user24  0x0000041f3fef8350  0x0000107c00000202
+    [TX]        user24  0x0000041f3fef8980  0x0000000000000242
+    [RX]        user24  0x0000041f3fef91e4  0x0000107c00000202
+    [TX]        user24  0x0000041f3fef97b4  0x0000000000000242
+    [RX]        user24  0x0000041f3fefa014  0x0000107c00000202
+    [TX]        user24  0x0000041f3fefae28  0x0000000000000242
+    [RX]        user24  0x0000041f3fefb694  0x0000107c00000202
+    [TX]        user24  0x0000041f3fefbcc8  0x0000000000000242
+    [RX]        user24  0x0000041f3fefcaa0  0x00001b7000000202
+    [TX]        user24  0x0000041f3fefe484  0x0000000000000242
+    [RX]        user24  0x0000041f40052c9c  0x0000002400000202
+    [TX]        user24  0x0000041f400537d8  0x0000000000000242
+    [RX]        user24  0x0000041f400548d0  0x0000001800000202
+    [TX]        user24  0x0000041f40054ee8  0x0000001c00000002
+    [RX]        user24  0x0000041f40055760  0x0000000000000042
+    [TX]        user24  0x0000041f40055cdc  0x0000000000000242
+    [RX]        user24  0x0000041f400568a4  0x0000107c00000202
+    [TX]        user24  0x0000041f40057118  0x0000000000000242
+    [RX]        user24  0x0000041f40057b4c  0x0000107c00000202
+    [TX]        user24  0x0000041f40058b04  0x0000000000000242
+    [RX]        user24  0x0000041f40059450  0x0000107c00000202
+    [TX]        user24  0x0000041f4005a654  0x0000000000000242
+    [RX]        user24  0x0000041f4005ae8c  0x0000107c00000202
+    [TX]        user24  0x0000041f4005bbb0  0x0000000000000242
+    [RX]        user24  0x0000041f4005c514  0x0000107c00000202
+    [TX]        user24  0x0000041f4005d2d0  0x0000000000000242
+    [RX]        user24  0x0000041f4005dba0  0x0000107c00000202
+    [TX]        user24  0x0000041f4005e230  0x0000000000000242
+    [RX]        user24  0x0000041f4005eb00  0x0000107c00000202
+    [TX]        user24  0x0000041f4005f15c  0x0000000000000242
+    [RX]        user24  0x0000041f4005fb84  0x0000107c00000202
+    [TX]        user24  0x0000041f40060884  0x0000000000000242
+    [RX]        user24  0x0000041f4006111c  0x0000107c00000202
+    [TX]        user24  0x0000041f40061748  0x0000000000000242
+    [RX]        user24  0x0000041f40062968  0x00001b7000000202
+    [TX]        user24  0x0000041f40063e5c  0x0000000000000242
+    [RX]        user24  0x0000041f400db0e8  0x0000002400000202
+    [TX]        user24  0x0000041f400dbc24  0x0000000000000242
+    [RX]        user24  0x0000041f400dc950  0x0000001800000202
+    [TX]        user24  0x0000041f400dceec  0x0000001c00000002
+    [RX]        user24  0x0000041f400dd68c  0x0000000000000042
+    [TX]        user24  0x0000041f400ddb6c  0x0000000000000242
+    [RX]        user24  0x0000041f400de7c4  0x0000001800000202
+    [TX]        user24  0x0000041f400decac  0x0000001c00000002
+    [RX]        user24  0x0000041f400df4d0  0x0000000000000042
+    [TX]        user24  0x0000041f400df8ec  0x0000000000000242
+    [RX]        user24  0x0000041f400e03a4  0x00001b7000000202
+    [TX]        user24  0x0000041f400e16e8  0x0000000000000242
+    [RX]   ioreporting  0x0000041f40558e68  0x0040000000000000
+    [TX]   ioreporting  0x0000041f4055f3b4  0x0040000000000000
+    [RX]        user24  0x0000041f41271e9c  0x0000001800000202
+    [TX]        user24  0x0000041f41272758  0x0000000000000242
+    [RX]        user24  0x0000041f419894f8  0x0000001800000202
+    [TX]        user24  0x0000041f41989878  0x0000000000000242
+    [RX]   ioreporting  0x0000041f4409c6ec  0x0040000000000000
+    [TX]   ioreporting  0x0000041f440a3828  0x0040000000000000
+    [RX]   ioreporting  0x0000041f440c4f68  0x0040000000000000
+    [TX]   ioreporting  0x0000041f440cc560  0x0040000000000000
+    [RX]   ioreporting  0x0000041f442c71dc  0x0040000000000000
+    [TX]   ioreporting  0x0000041f442ce484  0x0040000000000000
+    [RX]   ioreporting  0x0000041f442d5c68  0x0040000000000000
+    [TX]   ioreporting  0x0000041f442dcda8  0x0040000000000000
+    [RX]   ioreporting  0x0000041f4569d620  0x0040000000000000
+    [TX]   ioreporting  0x0000041f456a4a70  0x0040000000000000
+No mapping found for coredump section: 0xffffffff0001d000 - 0xffffffff0001dfff
+No mapping found for coredump section: 0xffffffff0001e000 - 0xffffffff0001efff
+No mapping found for coredump section: 0xffffffff00137000 - 0xffffffff00176fff
+No mapping found for coredump section: 0xffffffff00177000 - 0xffffffff0017dfff
+No mapping found for coredump section: 0xffffffff0017e000 - 0xffffffff00184fff
+No mapping found for coredump section: 0xffffffff00185000 - 0xffffffff0018bfff
+No mapping found for coredump section: 0xffffffff0018c000 - 0xffffffff00192fff
+No mapping found for coredump section: 0xffffffff00193000 - 0xffffffff00199fff
+No mapping found for coredump section: 0xffffffff005ac000 - 0xffffffff005ebfff
+No mapping found for coredump section: 0xffffffff005ec000 - 0xffffffff005f2fff
+No mapping found for coredump section: 0xffffffff005f3000 - 0xffffffff005f9fff
+No mapping found for coredump section: 0xffffffff005fa000 - 0xffffffff00600fff
+
+Unknown Section: Section 'Cpct' [0x43706374], Version 1.0, size 64
+0x5043546d 0x00000001 0x00000000 0x00000000 | mTCP............
+0x00000000 0x00000000 0x00000000 0x00000000 | ................
+0x00000000 0x00000000 0x00000000 0x00000000 | ................
+0x00000000 0x00000000 0x00000000 0x00000000 | ................
+Sleep Count: 49946548
+Wake Count:  24559253
+Duty Cycle:  3
+Mailbox (1): (4)
+  Inbox  AKF_KIC_INBOX_CTRL = 0x00020001, AKF_KIC_MAILBOX_SET = 0x11111101
+  Outbox AKF_AP_OUTBOX_CTRL = 0x00020001, AP instance uninitialized
+
+
+    dir   endpoint      timestamp           msg
+    ====  ============  ==================  ==================
+    [TX]        user01  0x0000041c6bb416a4  0x6750313200040011
+    [RX]        user01  0x0000041c6bb43620  0x0000000000000000
+    [TX]        user01  0x0000041f3f9b6598  0x6750313200040011
+    [RX]        user01  0x0000041f3f9b8604  0x0000000000000000
+    [TX]        user01  0x0000041f3fbc3984  0x6750306100040011
+    [RX]        user01  0x0000041f3fbc577c  0x0000000000000000
+    [TX]        user01  0x0000041f3fea3244  0x6750306100040011
+    [RX]        user01  0x0000041f3fea5454  0x0000000000000000
+Sleep Count: 49946548
+Wake Count:  24559253
+Duty Cycle:  3
+
+RTBuddy(AP): Debug info:
+_iopStatus = 0x8
+_powerStateChangeLocked = false
+Mailbox Status:
+IDLE_STATUS: 0x000000ac
+INBOX0_CTRL: 0x00020001
+OUTBOX0_CTRL: 0x00021101
+AP->IOP Mailbox Log:
+Timestamp          | Dir  | Message
+0x00000226a31ee7ec | [RX] | 0x0040000000000000 0x0010010000000004
+0x00000226a31f5898 | [TX] | 0x0040000000000000 0x0000000000000004
+0x00000226a31fd0dc | [RX] | Interrupt
+0x00000226a31fd110 | [RX] | 0x0040000000000000 0x0010010000000004
+0x00000226a45bd1e4 | [TX] | 0x0040000000000000 0x0000000000000004
+0x00000226a45c4d4c | [RX] | Interrupt
+0x00000226a45c4d84 | [RX] | 0x0040000000000000 0x0010010000000004
+0x00000226a6056d54 | [RX] | Interrupt
+0x00000226a6056dfc | [RX] | 0x0010300806646000 0x0010010000000001
+0x000002269ee0ba84 | [TX] | 0x0000107c00000202 0x0000000000000037
+0x000002269ee0c9c4 | [RX] | Interrupt
+0x000002269ee0ca30 | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269ee0ce0c | [TX] | 0x0000107c00000202 0x0000000000000037
+0x000002269ee0e084 | [RX] | Interrupt
+0x000002269ee0e0ec | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269ee0e588 | [TX] | 0x0000107c00000202 0x0000000000000037
+0x000002269ee0f54c | [RX] | Interrupt
+0x000002269ee0f5b4 | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269ee0f968 | [TX] | 0x0000107c00000202 0x0000000000000037
+0x000002269ee102c8 | [RX] | Interrupt
+0x000002269ee10334 | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269ee106e0 | [TX] | 0x0000107c00000202 0x0000000000000037
+0x000002269ee10f84 | [RX] | Interrupt
+0x000002269ee10ff4 | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269ee113cc | [TX] | 0x0000107c00000202 0x0000000000000037
+0x000002269ee11b9c | [RX] | Interrupt
+0x000002269ee11c08 | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269ee11f58 | [TX] | 0x0000107c00000202 0x0000000000000037
+0x000002269ee138b8 | [RX] | Interrupt
+0x000002269ee13930 | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269ee13f80 | [TX] | 0x0000107c00000202 0x0000000000000037
+0x000002269ee15254 | [RX] | Interrupt
+0x000002269ee152d0 | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269ee1577c | [TX] | 0x0000107c00000202 0x0000000000000037
+0x000002269ee16ae0 | [RX] | Interrupt
+0x000002269ee16b50 | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269ee16f58 | [TX] | 0x0000107c00000202 0x0000000000000037
+0x000002269ee17ec4 | [RX] | Interrupt
+0x000002269ee17f34 | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269ee1831c | [TX] | 0x0000107c00000202 0x0000000000000037
+0x000002269ee18db8 | [RX] | Interrupt
+0x000002269ee18e28 | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269ee19220 | [TX] | 0x0000107c00000202 0x0000000000000037
+0x000002269ee19b48 | [RX] | Interrupt
+0x000002269ee19bbc | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269ee1a050 | [TX] | 0x0000107c00000202 0x0000000000000037
+0x000002269ee1b208 | [RX] | Interrupt
+0x000002269ee1b27c | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269ee1b684 | [TX] | 0x0000107c00000202 0x0000000000000037
+0x000002269ee1c100 | [RX] | Interrupt
+0x000002269ee1c170 | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269ee1cae0 | [TX] | 0x00001b7000000202 0x0000000000000037
+0x000002269ee1e80c | [RX] | Interrupt
+0x000002269ee1e884 | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269ef72cc4 | [TX] | 0x0000002400000202 0x0000000000000037
+0x000002269ef73be4 | [RX] | Interrupt
+0x000002269ef73c64 | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269ef748b0 | [TX] | 0x0000001800000202 0x0000000000000037
+0x000002269ef75218 | [RX] | Interrupt
+0x000002269ef75244 | [RX] | 0x0000001c00000002 0x0010010000000037
+0x000002269ef7579c | [TX] | 0x0000000000000042 0x0000000000000037
+0x000002269ef75fec | [RX] | Interrupt
+0x000002269ef76040 | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269ef768e0 | [TX] | 0x0000107c00000202 0x0000000000000037
+0x000002269ef77610 | [RX] | Interrupt
+0x000002269ef7767c | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269ef77b88 | [TX] | 0x0000107c00000202 0x0000000000000037
+0x000002269ef78e98 | [RX] | Interrupt
+0x000002269ef78f1c | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269ef793a0 | [TX] | 0x0000107c00000202 0x0000000000000037
+0x000002269ef7a9e8 | [RX] | Interrupt
+0x000002269ef7aa1c | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269ef7ae50 | [TX] | 0x0000107c00000202 0x0000000000000037
+0x000002269ef7bf94 | [RX] | Interrupt
+0x000002269ef7c000 | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269ef7c4cc | [TX] | 0x0000107c00000202 0x0000000000000037
+0x000002269ef7d604 | [RX] | Interrupt
+0x000002269ef7d644 | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269ef7db30 | [TX] | 0x0000107c00000202 0x0000000000000037
+0x000002269ef7e634 | [RX] | Interrupt
+0x000002269ef7e6a0 | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269ef7eb40 | [TX] | 0x0000107c00000202 0x0000000000000037
+0x000002269ef7f544 | [RX] | Interrupt
+0x000002269ef7f5d4 | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269ef7fbc0 | [TX] | 0x0000107c00000202 0x0000000000000037
+0x000002269ef80c20 | [RX] | Interrupt
+0x000002269ef80c94 | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269ef810fc | [TX] | 0x0000107c00000202 0x0000000000000037
+0x000002269ef81ad8 | [RX] | Interrupt
+0x000002269ef81b4c | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269ef829a8 | [TX] | 0x00001b7000000202 0x0000000000000037
+0x000002269ef842b0 | [RX] | Interrupt
+0x000002269ef842cc | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269effb070 | [TX] | 0x0000002400000202 0x0000000000000037
+0x000002269effbf6c | [RX] | Interrupt
+0x000002269effbff4 | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269effc930 | [TX] | 0x0000001800000202 0x0000000000000037
+0x000002269effd21c | [RX] | Interrupt
+0x000002269effd248 | [RX] | 0x0000001c00000002 0x0010010000000037
+0x000002269effd6cc | [TX] | 0x0000000000000042 0x0000000000000037
+0x000002269effde68 | [RX] | Interrupt
+0x000002269effded8 | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269effe804 | [TX] | 0x0000001800000202 0x0000000000000037
+0x000002269effefc8 | [RX] | Interrupt
+0x000002269efff034 | [RX] | 0x0000001c00000002 0x0010010000000037
+0x000002269efff510 | [TX] | 0x0000000000000042 0x0000000000000037
+0x000002269efffc00 | [RX] | Interrupt
+0x000002269efffc6c | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269f0003e4 | [TX] | 0x00001b7000000202 0x0000000000000037
+0x000002269f001a0c | [RX] | Interrupt
+0x000002269f001a70 | [RX] | 0x0000000000000242 0x0010010000000037
+0x000002269f478dec | [TX] | 0x0040000000000000 0x0000000000000004
+0x000002269f47f6cc | [RX] | Interrupt
+0x000002269f47f6ec | [RX] | 0x0040000000000000 0x0010010000000004
+0x00000226a0191a90 | [TX] | 0x0000001800000202 0x0000000000000037
+0x00000226a0192a78 | [RX] | Interrupt
+0x00000226a0192b08 | [RX] | 0x0000000000000242 0x0010010000000037
+0x00000226a08a9530 | [TX] | 0x0000001800000202 0x0000000000000037
+0x00000226a08a9b94 | [RX] | Interrupt
+0x00000226a08a9bc0 | [RX] | 0x0000000000000242 0x0010010000000037
+0x00000226a2fbc73c | [TX] | 0x0040000000000000 0x0000000000000004
+0x00000226a2fc3b44 | [RX] | Interrupt
+0x00000226a2fc3b60 | [RX] | 0x0040000000000000 0x0010010000000004
+0x00000226a2fe4b3c | [TX] | 0x0040000000000000 0x0000000000000004
+0x00000226a2fec828 | [RX] | Interrupt
+0x00000226a2fec868 | [RX] | 0x0040000000000000 0x0010010000000004
+0x00000226a31e6e1c | [TX] | 0x0040000000000000 0x0000000000000004
+0x00000226a31ee7a8 | [RX] | Interrupt
+
+Debugger message: panic
+Memory ID: 0x6
+OS release type: User
+OS version: 24A348
+Kernel version: Darwin Kernel Version 24.0.0: Tue Sep 24 23:37:13 PDT 2024; root:xnu-11215.1.12~1/RELEASE_ARM64_T8112
+Fileset Kernelcache UUID: 237F707F2C936284529E815DC95EF785
+Kernel UUID: F4857C35-8D59-3CDF-BC96-2E1692409CB7
+Boot session UUID: DD2B6671-DF1A-48C6-9D1A-909E3AADA2D8
+iBoot version: iBoot-11881.1.1
+secure boot?: YES
+roots installed: 0
+Paniclog version: 14
+KernelCache slide: 0x000000001fd68000
+KernelCache base:  0xfffffe0026d6c000
+Kernel slide:      0x000000001fd70000
+Kernel text base:  0xfffffe0026d74000
+Kernel text exec slide: 0x0000000021458000
+Kernel text exec base:  0xfffffe002845c000
+mach_absolute_time: 0x226a77cd147
+Epoch Time:        sec       usec
+  Boot    : 0x673ba1cd 0x0002b9b4
+  Sleep   : 0x673e8113 0x0004cdba
+  Wake    : 0x673e8178 0x000e2352
+  Calendar: 0x673e8379 0x0008f6b5
+
+Zone info:
+  Zone map: 0xfffffe10f168c000 - 0xfffffe30f168c000
+  . VM    : 0xfffffe10f168c000 - 0xfffffe15be358000
+  . RO    : 0xfffffe15be358000 - 0xfffffe1757cf0000
+  . GEN0  : 0xfffffe1757cf0000 - 0xfffffe1c249bc000
+  . GEN1  : 0xfffffe1c249bc000 - 0xfffffe20f1688000
+  . GEN2  : 0xfffffe20f1688000 - 0xfffffe25be354000
+  . GEN3  : 0xfffffe25be354000 - 0xfffffe2a8b020000
+  . DATA  : 0xfffffe2a8b020000 - 0xfffffe30f168c000
+  Metadata: 0xfffffe30f169c000 - 0xfffffe30f969c000
+  Bitmaps : 0xfffffe30f969c000 - 0xfffffe30fac7c000
+  Extra   : 0 - 0
+
+CORE 0 recently retired instr at 0xfffffe0028613e04
+CORE 1 recently retired instr at 0xfffffe0028613e04
+CORE 2 recently retired instr at 0xfffffe00286126b4
+CORE 3 recently retired instr at 0xfffffe0028613e04
+CORE 4 recently retired instr at 0xfffffe0028613e04
+CORE 5 recently retired instr at 0xfffffe0028613e04
+CORE 6 recently retired instr at 0xfffffe0028613e04
+CORE 7 recently retired instr at 0xfffffe0028613e04
+TPIDRx_ELy = {1: 0xfffffe20f0ff17b0  0: 0x0000000000000002  0ro: 0x0000000000000000 }
+CORE 0 PVH locks held: None
+CORE 1 PVH locks held: None
+CORE 2 PVH locks held: None
+CORE 3 PVH locks held: None
+CORE 4 PVH locks held: None
+CORE 5 PVH locks held: None
+CORE 6 PVH locks held: None
+CORE 7 PVH locks held: None
+CORE 0: PC=0xfffffe00284d2d34, LR=0xfffffe00284d2e2c, FP=0xfffffe002dc83df0
+CORE 1: PC=0xfffffe00285b6868, LR=0xfffffe00285a3794, FP=0xfffffe100a137dc0
+CORE 2 is the one that panicked. Check the full backtrace for details.
+CORE 3: PC=0x0000000199d86a64, LR=0x0000000199d86d94, FP=0x000000016f64df50
+CORE 4: PC=0xfffffe00284ceef8, LR=0xfffffe00284cef58, FP=0xfffffe1008cdb6e0
+CORE 5: PC=0xfffffe002854b8ac, LR=0xfffffe002854b840, FP=0xfffffe1009e678c0
+CORE 6: PC=0x000000019eeaf648, LR=0x000000019eeaf1cc, FP=0x000000016b752500
+CORE 7: PC=0xfffffe00285fed90, LR=0xfffffe002860e5a4, FP=0xfffffe1009a8be40
+Compressor Info: 30% of compressed pages limit (OK) and 12% of segments limit (OK) with 3 swapfiles and OK swap space
+Panicked task 0xfffffe20f1559698: 0 pages, 538 threads: pid 0: kernel_task
+Panicked thread: 0xfffffe20f0ff17b0, backtrace: 0xfffffe1009beb810, tid: 907
+		  lr: 0xfffffe00284b6f3c  fp: 0xfffffe1009beb8a0
+		  lr: 0xfffffe002860a610  fp: 0xfffffe1009beb910
+		  lr: 0xfffffe00286089f0  fp: 0xfffffe1009beb9c0
+		  lr: 0xfffffe00284638b0  fp: 0xfffffe1009beb9d0
+		  lr: 0xfffffe00284b6854  fp: 0xfffffe1009bebda0
+		  lr: 0xfffffe0028d0a7cc  fp: 0xfffffe1009bebdc0
+		  lr: 0xfffffe002b3be1d0  fp: 0xfffffe1009bebe50
+		  lr: 0xfffffe002adc3298  fp: 0xfffffe1009bebe80
+		  lr: 0xfffffe0028c06144  fp: 0xfffffe1009bebed0
+		  lr: 0xfffffe0028c06d20  fp: 0xfffffe1009bebf20
+		  lr: 0xfffffe002846cbe8  fp: 0x0000000000000000
+      Kernel Extensions in backtrace:
+         com.apple.driver.IOSlaveProcessor(1.0)[7041977D-27BD-3FD2-A437-16DD6B6A447F]@0xfffffe002adc2120->0xfffffe002adc3ad3
+         com.apple.driver.RTBuddy(1.0)[195CCE0C-407C-34B3-A3E8-6A236B4240D9]@0xfffffe002b397060->0xfffffe002b3d8c13
+            dependency: com.apple.driver.AppleA7IOP(1.0.2)[1B458BBB-D3C2-3E6F-ADE9-A5A1D3978F62]@0xfffffe0028e051b0->0xfffffe0028e0b323
+            dependency: com.apple.driver.AppleARMPlatform(1.0.2)[B0D2E9D2-A720-3F97-95F2-ABEED72C3D12]@0xfffffe0028e96770->0xfffffe0028eea597
+            dependency: com.apple.driver.IOSlaveProcessor(1)[7041977D-27BD-3FD2-A437-16DD6B6A447F]@0xfffffe002adc2120->0xfffffe002adc3ad3
+            dependency: com.apple.iokit.IOReportFamily(47)[28565B1F-7B9D-3BF5-BF9D-374568AE4C86]@0xfffffe002ad1ce90->0xfffffe002ad1fc93
+            dependency: com.apple.kec.corecrypto(14.0)[D2B32A44-84CC-3567-AF2E-C465EA34E7E3]@0xfffffe002b700340->0xfffffe002b75906b
+
+last started kext at 1421217941984: com.apple.driver.usb.AppleUSBHostBillboardDevice	1.0 (addr 0xfffffe002779c560, size 2592)
+loaded kexts:
+com.apple.driver.usb.AppleUSBHostBillboardDevice	1.0
+com.apple.driver.usb.realtek8153patcher	5.0.0
+com.apple.iokit.SCSITaskUserClient	498
+com.apple.driver.AppleUSBMassStorageInterfaceNub	556
+com.apple.filesystems.autofs	3.0
+com.apple.driver.AppleTopCaseHIDEventDriver	8400.24
+com.apple.driver.CoreKDL	1
+com.apple.driver.AppleBiometricServices	1
+com.apple.driver.DiskImages.ReadWriteDiskImage	493.0.0
+com.apple.driver.DiskImages.UDIFDiskImage	493.0.0
+com.apple.driver.DiskImages.RAMBackingStore	493.0.0
+com.apple.driver.DiskImages.FileBackingStore	493.0.0
+com.apple.driver.SEPHibernation	1
+com.apple.driver.AppleUSBDeviceNCM	5.0.0
+com.apple.driver.AppleThunderboltIP	4.0.3
+com.apple.driver.AppleFileSystemDriver	3.0.1
+com.apple.nke.l2tp	1.9
+com.apple.filesystems.tmpfs	1
+com.apple.driver.AppleSmartBatteryManager	161.0.0
+com.apple.filesystems.nfs	1
+com.apple.filesystems.lifs	1
+com.apple.filesystems.apfs	2313.1.2
+com.apple.IOTextEncryptionFamily	1.0.0
+com.apple.filesystems.hfs.kext	672
+com.apple.security.BootPolicy	1
+com.apple.BootCache	40
+com.apple.AppleFSCompression.AppleFSCompressionTypeZlib	1.0.0
+com.apple.AppleFSCompression.AppleFSCompressionTypeDataless	1.0.0d1
+com.apple.driver.AppleALSColorSensor	1.0.0d1
+com.apple.driver.AppleAOPVoiceTrigger	400.40
+com.apple.driver.AppleProResHW	425.3
+com.apple.driver.AppleAVE2	803.16.2
+com.apple.driver.AppleAVD	798.2
+com.apple.driver.AppleCS42L84Audio	800.93
+com.apple.driver.AppleJPEGDriver	7.1.5
+com.apple.AGXG14G	320.35.5
+com.apple.AppleEmbeddedSimpleSPINORFlasher	1
+com.apple.driver.AppleSmartIO2	1
+com.apple.driver.usb.AppleSynopsysUSB40XHCI	1
+com.apple.driver.AudioDMAController-T8112	400.97
+com.apple.driver.AppleTypeCRetimer	1.0.0
+com.apple.driver.AppleMobileDispH14G-DCP	140.0
+com.apple.driver.ApplePMP	1
+com.apple.driver.AppleSN012776Amp	800.93
+com.apple.driver.AppleT8020SOCTuner	1
+com.apple.driver.AppleT8112CLPC	1
+com.apple.driver.AppleSamsungSerial	1.0.0d1
+com.apple.driver.AppleSerialShim	1
+com.apple.driver.ApplePMPFirmware	1
+com.apple.driver.AppleEventLogHandler	1
+com.apple.driver.AppleDPDisplayTCON	1
+com.apple.driver.AppleS5L8960XNCO	1
+com.apple.driver.AppleT8112PMGR	1
+com.apple.driver.AppleS8000AES	1
+com.apple.driver.AppleS8000DWI	1.0.0d1
+com.apple.driver.AppleInterruptControllerV2	1.0.0d1
+com.apple.driver.AppleT8110DART	1
+com.apple.driver.AppleBluetoothModule	1
+com.apple.driver.AppleBCMWLANBusInterfacePCIe	1
+com.apple.driver.AppleS5L8920XPWM	1.0.0d1
+com.apple.driver.AppleS5L8940XI2C	1.0.0d2
+com.apple.driver.AppleSPIMC	1
+com.apple.driver.AppleM68Buttons	1.0.0d1
+com.apple.driver.AppleT8110	1
+com.apple.iokit.IOUserEthernet	1.0.1
+com.apple.driver.usb.AppleUSBUserHCI	1
+com.apple.iokit.IOKitRegistryCompatibility	1
+com.apple.iokit.EndpointSecurity	1
+com.apple.driver.AppleDiskImages2	379.0.11
+com.apple.AppleSystemPolicy	2.0.0
+com.apple.kec.InvalidateHmac	1
+com.apple.kec.AppleEncryptedArchive	1
+com.apple.driver.usb.IOUSBHostHIDDevice	1.2
+com.apple.driver.usb.cdc.ecm	5.0.0
+com.apple.driver.usb.cdc.acm	5.0.0
+com.apple.driver.usb.serial	6.0.0
+com.apple.driver.usb.cdc	5.0.0
+com.apple.driver.AppleUSBAudio	701.72
+com.apple.iokit.IOAudioFamily	600.2
+com.apple.vecLib.kext	1.2.0
+com.apple.driver.AppleUVDMDriver	1.0.0
+com.apple.driver.AppleUVDM	1.0.0
+com.apple.driver.driverkit.serial	6.0.0
+com.apple.driver.AppleHSBluetoothDriver	8400.24
+com.apple.driver.IOBluetoothHIDDriver	9.0.0
+com.apple.driver.AppleActuatorDriver	8400.33
+com.apple.driver.AppleMultitouchDriver	8400.33
+com.apple.driver.AppleHIDKeyboard	8000.4
+com.apple.driver.AppleMesaSEPDriver	100.99
+com.apple.iokit.IOBiometricFamily	1
+com.apple.iokit.IOAVBFamily	1300.26
+com.apple.driver.DiskImages.KernelBacked	493.0.0
+com.apple.driver.AppleSEPHDCPManager	1.0.1
+com.apple.driver.AppleXsanScheme	3
+com.apple.driver.AppleTrustedAccessory	1
+com.apple.iokit.AppleSEPGenericTransfer	1
+com.apple.driver.usb.networking	5.0.0
+com.apple.driver.AppleThunderboltDPInAdapter	8.5.1
+com.apple.driver.AppleThunderboltDPAdapterFamily	8.5.1
+com.apple.driver.AppleThunderboltUSBDownAdapter	1.0.4
+com.apple.driver.AppleThunderboltPCIDownAdapter	4.1.1
+com.apple.driver.AppleConvergedIPCOLYBTControl	1
+com.apple.driver.AppleConvergedPCI	1
+com.apple.driver.AppleBluetoothDebug	1
+com.apple.driver.AppleBTM	1.0.1
+com.apple.nke.ppp	1.9
+com.apple.driver.AppleBSDKextStarter	3
+com.apple.kext.triggers	1.0
+com.apple.driver.IOHIDPowerSource	1
+com.apple.driver.AppleCallbackPowerSource	1
+com.apple.filesystems.hfs.encodings.kext	1
+com.apple.driver.AppleSyntheticGameController	12.0.37
+com.apple.driver.AppleDCPDPTXProxy	1.0.0
+com.apple.driver.DCPDPFamilyProxy	1
+com.apple.plugin.IOgPTPPlugin	1300.51
+com.apple.driver.AppleHPM	3.4.4
+com.apple.driver.AppleStockholmControl	1.0.0
+com.apple.AGXFirmwareKextG14GRTBuddy	1
+com.apple.AGXFirmwareKextRTBuddy64	320.35.5
+com.apple.driver.AppleHIDTransportFIFO	8000.26
+com.apple.driver.AppleHIDTransport	8000.26
+com.apple.driver.AppleInputDeviceSupport	8000.26
+com.apple.driver.AppleAOPAudio	400.9
+com.apple.driver.AppleDockChannel	1
+com.apple.driver.AppleH11ANEInterface	8.18.0
+com.apple.driver.AppleCSEmbeddedAudio	800.93
+com.apple.driver.AppleUSBXDCIARM	1.0
+com.apple.driver.AppleUSBXDCI	1.0
+com.apple.iokit.IOUSBDeviceFamily	2.0.0
+com.apple.driver.AppleDiagnosticDataAccessReadOnly	1.0.0
+com.apple.driver.AppleSPMIPMU	1.0.1
+com.apple.driver.AppleDialogPMU	1.0.1
+com.apple.driver.DCPAVFamilyProxy	1
+com.apple.iokit.IOGPUFamily	104.0.6
+com.apple.driver.AppleH13CameraInterface	9.7.0
+com.apple.driver.usb.AppleSynopsysUSBXHCI	1
+com.apple.driver.usb.AppleUSBXHCI	1.2
+com.apple.driver.AppleEmbeddedUSBHost	1
+com.apple.driver.usb.AppleUSBHub	1.2
+com.apple.driver.usb.AppleUSBHostCompositeDevice	1.2
+com.apple.iokit.IONVMeFamily	2.1.0
+com.apple.driver.AppleNANDConfigAccess	1.0.0
+com.apple.driver.AppleSPMI	1.0.1
+com.apple.driver.AppleT8112TypeCPhy	1
+com.apple.driver.AppleT8103TypeCPhy	1
+com.apple.driver.AppleSART	1
+com.apple.iokit.IOMobileGraphicsFamily-DCP	343.0.0
+com.apple.driver.AppleDCP	1
+com.apple.iokit.IOMobileGraphicsFamily	343.0.0
+com.apple.driver.AppleM2ScalerCSCDriver	265.0.0
+com.apple.driver.AppleEmbeddedAudio	800.93
+com.apple.iokit.AppleARMIISAudio	400.22
+com.apple.driver.IISAudioIsolatedStreamECProxy	400.22
+com.apple.driver.ExclavesAudioKext	200.54
+com.apple.driver.ApplePassthroughPPM	3.0
+com.apple.driver.AppleSPU	1
+com.apple.driver.usb.AppleUSBHostPacketFilter	1.0
+com.apple.driver.AppleFirmwareKit	1
+com.apple.driver.ApplePMGR	1
+com.apple.driver.AppleA7IOP-ASCWrap-v4	1.0.2
+com.apple.driver.AppleARMWatchdogTimer	1
+com.apple.driver.AppleDisplayCrossbar	1.0.0
+com.apple.iokit.IODisplayPortFamily	1.0.0
+com.apple.driver.AppleTypeCPhy	1
+com.apple.driver.AppleA7IOP-MXWrap-v1	1.0.2
+com.apple.driver.AppleThunderboltNHI	7.2.81
+com.apple.driver.AppleT8103PCIeC	1
+com.apple.iokit.IOThunderboltFamily	9.3.3
+com.apple.iokit.IOPortFamily	1.0
+com.apple.driver.ApplePIODMA	1
+com.apple.driver.AppleT8112PCIe	1
+com.apple.driver.AppleBluetoothDebugService	1
+com.apple.driver.AppleBCMWLANCore	1.0.0
+com.apple.iokit.IO80211Family	1200.13.1
+com.apple.driver.IOImageLoader	1.0.0
+com.apple.driver.AppleOLYHAL	1
+com.apple.driver.AppleMCA2-T8112	900.4
+com.apple.driver.AppleEmbeddedAudioLibs	400.9
+com.apple.driver.AppleFirmwareUpdateKext	1
+com.apple.driver.AppleGPIOICController	1.0.2
+com.apple.driver.AppleMobileApNonce	1
+com.apple.driver.AppleFireStormErrorHandler	1
+com.apple.driver.AppleMultiFunctionManager	1
+com.apple.driver.corecapture	1.0.4
+com.apple.driver.AppleEmbeddedPCIE	1
+com.apple.iokit.IOTimeSyncFamily	1300.51
+com.apple.driver.DiskImages	493.0.0
+com.apple.iokit.IOGraphicsFamily	598
+com.apple.iokit.IOBluetoothFamily	9.0.0
+com.apple.driver.AppleUIO	1
+com.apple.driver.AppleSSE	1.0
+com.apple.driver.AppleSEPKeyStore	2
+com.apple.driver.AppleUSBTDM	556
+com.apple.iokit.IOUSBMassStorageDriver	250
+com.apple.iokit.IOPCIFamily	2.9
+com.apple.iokit.IOUSBHostFamily	1.2
+com.apple.driver.AppleUSBHostMergeProperties	1.2
+com.apple.driver.usb.AppleUSBCommon	1.0
+com.apple.driver.AppleSMC	3.1.9
+com.apple.driver.RTBuddy	1.0.0
+com.apple.driver.AppleEmbeddedTempSensor	1.0.0
+com.apple.driver.AppleARMPMU	1.0
+com.apple.iokit.IOAccessoryManager	1.0.0
+com.apple.driver.AppleOnboardSerial	1.0
+com.apple.iokit.IOSerialFamily	11
+com.apple.iokit.IOSCSIBlockCommandsDevice	498
+com.apple.iokit.IOSCSIArchitectureModelFamily	498
+com.apple.driver.AppleRSMChannel	1
+com.apple.iokit.IORSMFamily	1
+com.apple.driver.AppleLockdownMode	1
+com.apple.driver.AppleIPAppender	1.0
+com.apple.iokit.IOSkywalkFamily	1.0
+com.apple.driver.mDNSOffloadUserClient	1.0.1b8
+com.apple.iokit.IONetworkingFamily	3.4
+com.apple.driver.AppleFDEKeyStore	28.30
+com.apple.driver.AppleEffaceableStorage	1.0
+com.apple.driver.AppleCredentialManager	1.0
+com.apple.driver.AppleSEPManager	1.0.1
+com.apple.driver.IODARTFamily	1
+com.apple.driver.AppleA7IOP	1.0.2
+com.apple.driver.IOSlaveProcessor	1
+com.apple.driver.AppleBiometricSensor	2
+com.apple.iokit.IOHIDFamily	2.0.0
+com.apple.AUC	1.0
+com.apple.iokit.IOSurface	372.1
+com.apple.iokit.IOAVFamily	1.0.0
+com.apple.iokit.IOHDCPFamily	1.0.0
+com.apple.iokit.IOCECFamily	1
+com.apple.iokit.IOAudio2Family	1.0
+com.apple.driver.AppleIISController	400.1
+com.apple.driver.AppleAudioClockLibs	400.9
+com.apple.driver.FairPlayIOKit	72.10.0
+com.apple.driver.AppleARMPlatform	1.0.2
+com.apple.iokit.IOSlowAdaptiveClockingFamily	1.0.0
+com.apple.iokit.IOReportFamily	47
+com.apple.security.quarantine	4
+com.apple.security.sandbox	300.0
+com.apple.iokit.IOStorageFamily	2.1
+com.apple.kext.AppleMatch	1.0.0d1
+com.apple.driver.AppleMobileFileIntegrity	1.0.5
+com.apple.iokit.CoreAnalyticsFamily	1
+com.apple.security.AppleImage4	7.0.0
+com.apple.kext.CoreTrust	1
+com.apple.iokit.IOCryptoAcceleratorFamily	1.0.1
+com.apple.kec.pthread	1
+com.apple.kec.Libm	1
+com.apple.kec.Compression	1.0
+com.apple.kec.corecrypto	14.0
+
+
+
+** Stackshot Succeeded ** Bytes Traced 602630 (Uncompressed 1538800) **
